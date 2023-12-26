@@ -11,3 +11,4 @@ function addTwoDigits(a: number, b: number): number {
 // Example usage
 const result = addTwoDigits(5, 3);
 console.log(result); // Output will be 8
+console.log("Pull Request URL:", process.env.PULL_REQUEST_URL);
