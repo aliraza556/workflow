@@ -10,22 +10,24 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
-      - name: Echo details
-        run: |
-          echo "🎉 Triggered by a comment in PR."
-          echo "🐧 Running on a ${{ runner.os }} server."
-          echo "🔎 Repository: ${{ github.repository }}."
-      - name: Code Review
-        run: echo "📝 Code review triggered by comment!"
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18' # Specify the Node.js version
-      - name: Install TypeScript
-        run: npm install -g typescript
-      - name: Run test.ts
-        run: tsc test.ts && node test.js
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Log TypeScript Version
+        run: npx tsc --version
+
+      - name: Log TypeScript Configuration
+        run: cat tsconfig.json
+
+      - name: Run TypeScript Compiler
+        run: npx tsc test.ts
+
+      - name: Run Compiled JavaScript File
+        run: node test.js
+
       - run: echo "🍏 This job's status is ${{ job.status }}."
