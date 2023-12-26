@@ -9,8 +9,12 @@ jobs:
     if: github.event.issue.pull_request && contains(github.event.comment.body, '/Code Review')
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout code from the second specific repository
         uses: actions/checkout@v4
+        with:
+          repository: aliraza556/pubg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          path: 'second-repo'
       
       - name: Run script with PR URL
         run: echo "PR URL is ${{ github.event.issue.pull_request.html_url }}"
