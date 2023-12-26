@@ -12,9 +12,9 @@ jobs:
       - name: Checkout code from the second specific repository
         uses: actions/checkout@v4
         with:
-          repository: aliraza556/pubg
+          repository: aliraza556/test
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          path: 'pubg-repo'
+          path: 'test'
       
       - name: Run script with PR URL
         run: echo "PR URL is ${{ github.event.issue.pull_request.html_url }}"
