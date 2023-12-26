@@ -28,6 +28,8 @@ jobs:
         run: npx tsc test.ts
 
       - name: Run Compiled JavaScript File
+        env:
+          PULL_REQUEST_URL: ${{ github.event.issue.pull_request.html_url }}
         run: node test.js
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
