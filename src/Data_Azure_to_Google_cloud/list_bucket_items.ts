@@ -27,7 +27,7 @@ async function listFolders(bucketName: string): Promise<string[]> {
         });
 
         const folders = Array.from(folderSet);
-        console.log('Folders:', folders);
+        console.log('Folders list:', folders);
         return folders;
     } catch (error) {
         console.error('Error listing folders:', error);
