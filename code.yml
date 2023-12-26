@@ -1,18 +1,7 @@
-name: "AI Code Review Action"
-description: "Perform code reviews and comment on diffs using OpenAI API."
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18' # Specify the Node.js version
+          node-version: '18' # or your preferred Node.js version
 
       - name: Install Dependencies
         run: npm install
@@ -25,5 +14,5 @@ jobs:
 
       - name: Run TypeScript Compiler
         env:
-          PULL_REQUEST_URL: ${{ github.event.pull_request.html_url }}
+          PULL_REQUEST_URL: ${{ github.event.issue.pull_request.html_url }}
         run: npx ts-node test.ts
