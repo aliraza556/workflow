@@ -11,5 +11,14 @@ function addTwoDigits(a: number, b: number): number {
 // Example usage
 const result = addTwoDigits(5, 3);
 console.log(result); // Output will be 8
-const pullRequestUrl = process.env.PULL_REQUEST_URL;
-console.log("Pull Request URL:", pullRequestUrl);
+// const pullRequestUrl = process.env.PULL_REQUEST_URL;
+// console.log("Pull Request URL:", pullRequestUrl);
+
+const prUrl = process.env.PR_URL;
+
+if (prUrl) {
+  console.log(`Received PR URL: ${prUrl}`);
+  // Your logic here
+} else {
+  console.log("No PR URL provided.");
+}
