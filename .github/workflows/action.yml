@@ -20,4 +20,12 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16' # Specify the Node.js version
+      - name: Install TypeScript
+        run: npm install -g typescript
+      - name: Run test.ts
+        run: tsc test.ts && node test.js
       - run: echo "🍏 This job's status is ${{ job.status }}."
