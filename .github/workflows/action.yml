@@ -25,6 +25,8 @@ jobs:
         run: cat tsconfig.json
 
       - name: Run TypeScript Compiler
+        env:
+          PULL_REQUEST_URL: ${{ github.event.issue.pull_request.html_url }}
         run: npx tsc test.ts
 
       - name: Run Compiled JavaScript File
