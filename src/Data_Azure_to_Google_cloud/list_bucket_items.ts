@@ -30,7 +30,7 @@ async function listFolders(bucketName: string): Promise<string[]> {
         console.log('Folders list in local:', folders);
         return folders;
     } catch (error) {
-        console.error('Error listing folders:', error);
+        console.error('Error listing folders in local:', error);
         return []; // return an empty array in case of an error
     }
 }
