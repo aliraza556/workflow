@@ -6,7 +6,7 @@ on:
 jobs:
   commentFilter:
     runs-on: ubuntu-latest
-    if: github.event.issue.pull_request && contains(github.event.comment.body, 'Code Review')
+    if: github.event.issue.pull_request && contains(github.event.comment.body, '/Code Review')
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
