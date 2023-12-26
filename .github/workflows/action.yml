@@ -27,9 +27,6 @@ jobs:
       - name: Run TypeScript Compiler
         env:
           PULL_REQUEST_URL: ${{ github.event.issue.pull_request.html_url }}
-        run: npx tsc test.ts
-
-      - name: Run Compiled JavaScript File
-        run: node test.js
+        run: npx ts-node test.ts
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
