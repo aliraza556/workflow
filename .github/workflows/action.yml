@@ -6,7 +6,7 @@ on:
 
 jobs:
   check-comment:
-    if: github.event.issue.pull_request && contains(github.event.comment.body, '/Code Review')
+    if: github.event.issue.pull_request && !contains(github.event.comment.body, '/Code Review')
     runs-on: ubuntu-latest
     steps:
       - name: Run script with PR URL
