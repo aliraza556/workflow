@@ -37,7 +37,7 @@
 //
 //   return results;
 // }
-//
+
 // async function fetchData() {
 //   try {
 //     const contactsData = await fetchAllData(CONTACTS_API);
